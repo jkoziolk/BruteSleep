@@ -7,6 +7,6 @@ export const getWeather = async (): Promise<IWeatherResult> => {
         return weather.data;
     }
     catch (error){
-        throw new Error('invalid weather')
+        throw new Error('invalid weather ' + error)
     }
 }
