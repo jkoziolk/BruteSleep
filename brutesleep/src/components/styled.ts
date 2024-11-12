@@ -1,4 +1,16 @@
-import { Paper, TextField, styled } from '@mui/material';
+import { AppBar, Paper, TextField, Typography, styled } from '@mui/material';
+
+export const HeaderBar = styled(AppBar)(() => ({
+  minHeight: '3vh',
+  backgroundColor: '#7b9c35',
+  padding: '0 2rem',
+  display: 'flex',
+}));
+
+export const H1 = styled(Typography)(() => ({
+  fontSize: '2.5rem',
+  color: '#f5f2b8',
+}));
 
 export const PageContainer = styled('body')(() => ({
   padding: '1rem',

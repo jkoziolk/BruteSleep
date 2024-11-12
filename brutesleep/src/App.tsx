@@ -3,9 +3,8 @@ import './App.css';
 import { getWeather } from './services/weather';
 import { IWeatherResult } from './services/weatherModels';
 import { WeatherTable } from './components/WeatherTable';
-import { PageContainer } from './components/styled';
+import { H1, HeaderBar, PageContainer } from './components/styled';
 import { LocalizationSearch } from './components/LocalizationSearch';
-import { AppBar } from '@mui/material';
 
 export const App = () => {
   const [weather, setWeather] = useState<IWeatherResult>();
@@ -18,7 +17,9 @@ export const App = () => {
   });
   return (
     <>
-      <AppBar position="static">Brute sleep - śpij jak zwierze</AppBar>
+      <HeaderBar position="static">
+        <H1>Brute sleep</H1> - śpij jak zwierze
+      </HeaderBar>
       <PageContainer>
         <LocalizationSearch />
         <WeatherTable weather={weather} />
