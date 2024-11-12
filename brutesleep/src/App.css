@@ -2,7 +2,6 @@
   text-align: left;
 }
 
-
 .App-header {
   background-color: gray;
   height: 3rem;
@@ -12,6 +11,5 @@
   justify-content: left;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 1rem
+  padding: 1rem;
 }
-

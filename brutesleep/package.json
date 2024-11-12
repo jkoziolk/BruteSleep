@@ -38,7 +38,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{ts,tsx}\"",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "eslintConfig": {
     "extends": [
