@@ -5,6 +5,7 @@ import { IWeatherResult } from './services/weatherModels';
 import { WeatherTable } from './components/WeatherTable';
 import { PageContainer } from './components/styled';
 import { LocalizationSearch } from './components/LocalizationSearch';
+import { AppBar } from '@mui/material';
 
 export const App = () => {
   const [weather, setWeather] = useState<IWeatherResult>();
@@ -17,7 +18,7 @@ export const App = () => {
   });
   return (
     <>
-      <header className="App-header">Brute sleep - śpij jak zwierze</header>
+      <AppBar position="static">Brute sleep - śpij jak zwierze</AppBar>
       <PageContainer>
         <LocalizationSearch />
         <WeatherTable weather={weather} />

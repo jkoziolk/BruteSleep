@@ -1,7 +1,7 @@
-import { TextField } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
 import { searchLocalization } from '../services/localization';
 import { ILocalization } from '../services/localizationModels';
+import { SearchBox, SearchField, SearchList, SearchSuggestion } from './styled';
 
 export const LocalizationSearch = () => {
   const [localizations, searchLocalizations] = useState<ILocalization[]>();
@@ -12,15 +12,17 @@ export const LocalizationSearch = () => {
     searchLocalizations(await searchLocalization(event.target.value));
   };
   return (
-    <>
-      <TextField onChange={onLocalizationSearch}></TextField>
-      {localizations?.map((loc: ILocalization) => {
-        return (
-          <p>
-            {loc.display_name} {loc.lat} {loc.lon}
-          </p>
-        );
-      })}
-    </>
+    <SearchBox>
+      <SearchField onChange={onLocalizationSearch}></SearchField>
+      <SearchList>
+        {localizations?.map((loc: ILocalization) => {
+          return (
+            <SearchSuggestion>
+              {loc.display_name} {loc.lat} {loc.lon}
+            </SearchSuggestion>
+          );
+        })}
+      </SearchList>
+    </SearchBox>
   );
 };
