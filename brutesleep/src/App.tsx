@@ -19,9 +19,9 @@ export const App = () => {
     <>
       <HeaderBar position="static">
         <H1>Brute sleep</H1> - śpij jak zwierze
+        <LocalizationSearch />
       </HeaderBar>
       <PageContainer>
-        <LocalizationSearch />
         <WeatherTable weather={weather} />
         <WeatherTable weather={weather} />
         <WeatherTable weather={weather} />

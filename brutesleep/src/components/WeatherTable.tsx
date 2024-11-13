@@ -13,7 +13,7 @@ interface IWeatherTableProps {
 }
 export const WeatherTable = ({ weather }: IWeatherTableProps) => {
   return (
-    <BrutePaper>
+    <BrutePaper elevation={3}>
       <Table>
         <TableHead>
           <TableCell>Dzień</TableCell>

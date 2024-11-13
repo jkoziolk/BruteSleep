@@ -1,26 +1,24 @@
 import { AppBar, Paper, TextField, Typography, styled } from '@mui/material';
 
-export const HeaderBar = styled(AppBar)(() => ({
+export const HeaderBar = styled(AppBar)(({ theme }) => ({
   minHeight: '3vh',
-  backgroundColor: '#7b9c35',
+  backgroundColor: theme.palette.primary.main,
   padding: '0 2rem',
   display: 'flex',
 }));
 
 export const H1 = styled(Typography)(() => ({
   fontSize: '2.5rem',
-  color: '#f5f2b8',
+  color: '#DED0AEff',
 }));
 
 export const PageContainer = styled('body')(() => ({
   padding: '1rem',
   display: 'flex',
+  backgroundColor: '#ffffff',
 }));
 
 export const BrutePaper = styled(Paper)(() => ({
-  borderRadius: 0,
-  backgroundColor: '#bfbfbf',
-  border: 'solid 3px',
   margin: '1rem',
   padding: '1rem',
   overflow: 'scroll',
@@ -40,19 +38,25 @@ export const SearchField = styled(TextField)(() => ({
   minWidth: '100%',
 }));
 
-export const SearchList = styled('ul')(() => ({
+export const SuggestionsBox = styled('div')(() => ({
   minWidth: '100%',
-  listStyleType: 'none',
+  borderRadius: '5px',
   border: 'solid 1px',
-  borderBlockColor: 'black',
-  display: 'block',
+  borderBlockColor: 'grey',
+  padding: '0.3rem',
 }));
 
-export const SearchSuggestion = styled('li')(() => ({
+export const SuggestionsList = styled('ul')(() => ({
+  padding: '0.3rem',
+  minWidth: '100%',
+  listStyleType: 'none',
+}));
+
+export const Suggestion = styled('li')(() => ({
   minWidth: '100%',
   fontSize: '0.75rem',
   cursor: 'pointer',
-  '&hover': {
+  hover: {
     color: 'green',
   },
 }));
