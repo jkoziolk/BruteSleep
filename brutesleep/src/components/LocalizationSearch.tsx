@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { searchLocalization } from '../services/localization';
 import { ILocalization } from '../services/localizationModels';
 import {
@@ -8,18 +8,32 @@ import {
   SuggestionsBox,
   SuggestionsList,
 } from './styled';
+import { useDebounce } from '@uidotdev/usehooks';
 
 export const LocalizationSearch = () => {
-  const [localizations, searchLocalizations] = useState<ILocalization[]>();
+  const [localizations, setLocalizations] = useState<ILocalization[]>();
 
-  const onLocalizationSearch = async (
+  const [value, setValue] = useState<string>('');
+  const debouncedValue = useDebounce(value, 300);
+
+  useEffect(() => {
+    if (debouncedValue) {
+      const search = async () => {
+        setLocalizations(await searchLocalization(debouncedValue));
+      };
+      search();
+    }
+  }, [debouncedValue]);
+
+  const onChange = async (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    searchLocalizations(await searchLocalization(event.target.value));
+    setValue(event.target.value);
   };
+
   return (
     <SearchBox>
-      <SearchField onChange={onLocalizationSearch} size="small"></SearchField>
+      <SearchField onChange={onChange} value={value} size="small"></SearchField>
 
       {localizations && localizations.length > 0 && (
         <SuggestionsBox>
