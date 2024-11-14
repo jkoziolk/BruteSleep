@@ -5,20 +5,28 @@ import { IWeatherResult } from './services/weatherModels';
 import { WeatherTable } from './components/WeatherTable';
 import { H1, HeaderBar, PageContainer } from './components/styled';
 import { LocalizationSearch } from './components/LocalizationSearch';
+import { useSelector } from 'react-redux';
+import { localizationState } from './store/localization';
 
 export const App = () => {
+  const localization = useSelector(localizationState);
   const [weather, setWeather] = useState<IWeatherResult>();
-  useEffect(() => {
-    if (weather) return;
 
-    getWeather().then((res: IWeatherResult) => {
-      setWeather(res);
-    });
-  });
+  useEffect(() => {
+    console.log(localization);
+    if (!localization || !localization.lat || !localization.lon) return;
+
+    getWeather(localization.lat, localization.lon).then(
+      (res: IWeatherResult) => {
+        setWeather(res);
+      },
+    );
+  }, [localization]);
+
   return (
     <>
       <HeaderBar position="static">
-        <H1>Brute sleep</H1> - śpij jak zwierze
+        <H1>Brute sleep</H1> {localization.name as string}
       </HeaderBar>
       <PageContainer>
         <LocalizationSearch />

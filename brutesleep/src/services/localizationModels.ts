@@ -1,5 +1,5 @@
 export interface ILocalization {
-  lat: number;
-  lon: number;
+  lat: string;
+  lon: string;
   display_name: string;
 }

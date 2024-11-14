@@ -9,8 +9,11 @@ import {
   SuggestionsList,
 } from './styled';
 import { useDebounce } from '@uidotdev/usehooks';
+import { useDispatch } from 'react-redux';
+import { updateLocalization } from '../store/localization';
 
 export const LocalizationSearch = () => {
+  const dispatch = useDispatch();
   const [localizations, setLocalizations] = useState<ILocalization[]>();
 
   const [value, setValue] = useState<string>('');
@@ -31,6 +34,10 @@ export const LocalizationSearch = () => {
     setValue(event.target.value);
   };
 
+  const onClick = (loc: ILocalization) => {
+    dispatch(updateLocalization(loc));
+  };
+
   return (
     <SearchBox>
       <SearchField onChange={onChange} value={value} size="small"></SearchField>
@@ -40,7 +47,7 @@ export const LocalizationSearch = () => {
           <SuggestionsList>
             {localizations.map((loc: ILocalization) => {
               return (
-                <Suggestion onClick={() => alert(`${loc.lat} ${loc.lon}`)}>
+                <Suggestion onClick={() => onClick(loc)}>
                   {loc.display_name}
                 </Suggestion>
               );

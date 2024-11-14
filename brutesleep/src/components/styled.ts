@@ -31,32 +31,31 @@ export const BrutePaper = styled(Paper)(() => ({
 
 export const SearchBox = styled('div')(() => ({
   minWidth: '30vw',
+  maxWidth: '30vw',
   backgroundColor: 'white',
 }));
 
 export const SearchField = styled(TextField)(() => ({
   minWidth: '100%',
+  maxWidth: '100%',
 }));
 
-export const SuggestionsBox = styled('div')(() => ({
+export const SuggestionsBox = styled(Paper)(() => ({
   minWidth: '100%',
-  borderRadius: '5px',
-  border: 'solid 1px',
-  borderBlockColor: 'grey',
-  padding: '0.3rem',
+  maxWidth: '100%',
+  padding: 0,
+  margin: 0,
 }));
 
 export const SuggestionsList = styled('ul')(() => ({
-  padding: '0.3rem',
-  minWidth: '100%',
   listStyleType: 'none',
+  padding: '0.5rem',
 }));
 
-export const Suggestion = styled('li')(() => ({
-  minWidth: '100%',
-  fontSize: '0.75rem',
+export const Suggestion = styled('li')(({ theme }) => ({
+  fontSize: '1rem',
   cursor: 'pointer',
-  hover: {
-    color: 'green',
+  '&:hover': {
+    color: theme.palette.primary.main,
   },
 }));
