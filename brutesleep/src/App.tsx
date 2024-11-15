@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { getWeather } from './services/weather';
 import { IWeatherResult } from './services/weatherModels';
 import { WeatherTable } from './components/WeatherTable';
-import { H1, HeaderBar, PageContainer } from './components/styled';
+import { H1, HeaderBar, PageContainer } from './styled';
 import { LocalizationSearch } from './components/LocalizationSearch';
 import { useSelector } from 'react-redux';
 import { localizationState } from './store/localization';
@@ -25,7 +24,7 @@ export const App = () => {
   return (
     <>
       <HeaderBar position="static">
-        <H1>Brute sleep</H1> {localization.name as string}
+        <H1>Brute sleep</H1> {localization.lat} {localization.lon}
       </HeaderBar>
       <PageContainer>
         <LocalizationSearch />

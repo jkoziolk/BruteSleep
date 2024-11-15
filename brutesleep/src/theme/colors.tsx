@@ -1,8 +1,9 @@
-export const darkSlateGray = '#204C50';
-export const dutchWhite = '#DED0AE';
-export const avocado = '#556F0D';
-export const airForceBlue = '#658D9D';
-export const aliceBlue = '#DFE7EF';
-export const asparagus = '#6D8E4B';
 export const white = '#ffffff';
 export const black = '#000000';
+
+export const powderBlue = '#A6B8C3';
+export const darkMossGreen = '#475227';
+export const antiflashWhite = '#E5EAE';
+export const blackOlive = '#28271A';
+export const taupeGray = '#7B757D';
+export const fireBrick = '#C10125';

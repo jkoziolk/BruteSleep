@@ -5,7 +5,8 @@
   "parserOptions": { "project": ["./tsconfig.json"] },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "no-console": "warn"
+    "no-console": "warn",
+    "@typescript-eslint/no-explicit-any": "warn"
   },
   "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]
 }

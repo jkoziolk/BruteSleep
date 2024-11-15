@@ -1,32 +1,41 @@
 import { alpha, createTheme } from '@mui/material';
 import {
-  airForceBlue,
-  aliceBlue,
-  asparagus,
-  avocado,
+  antiflashWhite,
   black,
-  darkSlateGray,
-  dutchWhite,
+  blackOlive,
+  darkMossGreen,
+  fireBrick,
+  powderBlue,
+  taupeGray,
   white,
 } from './colors';
+
+// declare module '@mui/material/styles' {
+//   interface Palette {
+//     something: string;
+//   }
+// }
 
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: avocado,
-      dark: darkSlateGray,
-      light: dutchWhite,
+      main: darkMossGreen,
+      dark: blackOlive,
+      light: alpha(darkMossGreen, 0.5),
     },
     secondary: {
-      main: aliceBlue,
-      dark: airForceBlue,
-      light: white,
+      main: powderBlue,
+      dark: taupeGray,
+      light: antiflashWhite,
     },
     text: {
-      primary: asparagus,
-      secondary: black,
+      primary: black,
+      secondary: darkMossGreen,
       disabled: alpha(black, 0.5),
+    },
+    error: {
+      main: fireBrick,
     },
     background: {
       default: white,

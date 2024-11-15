@@ -6,7 +6,7 @@ import {
   TableRow,
 } from '@mui/material';
 import { IWeatherResult } from '../services/weatherModels';
-import { BrutePaper } from './styled';
+import { BrutePaper } from '../styled';
 
 interface IWeatherTableProps {
   weather?: IWeatherResult;
@@ -14,6 +14,7 @@ interface IWeatherTableProps {
 export const WeatherTable = ({ weather }: IWeatherTableProps) => {
   return (
     <BrutePaper elevation={3}>
+      <h3>Pogoda</h3>
       <Table>
         <TableHead>
           <TableCell>Dzień</TableCell>
