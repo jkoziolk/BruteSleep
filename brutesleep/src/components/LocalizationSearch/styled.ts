@@ -1,22 +1,34 @@
 import { Paper, TextField, styled } from '@mui/material';
 
-export const SearchBox = styled('div')(() => ({
+export const SearchBox = styled('div')(({ theme }) => ({
   minWidth: '30vw',
   maxWidth: '30vw',
-  backgroundColor: 'white',
+  backgroundColor: theme.palette.primary.main,
+  marginRigh: 0,
+  marginLeft: 'auto',
+  position: 'relative',
 }));
 
 export const SearchField = styled(TextField)(() => ({
-  minWidth: '100%',
+  minWidth: '30vw',
   maxWidth: '100%',
+  margin: 0,
+
+  '.MuiInputBase-root': {
+    backgroundColor: 'white',
+    borderRadius: 0,
+  },
 }));
 
-export const SuggestionsBox = styled(Paper)(() => ({
-  minWidth: '100%',
+export const SuggestionsBox = styled(Paper)(({ theme }) => ({
+  minWidth: '30vw',
   maxWidth: '100%',
   padding: 0,
   margin: 0,
   borderRadius: 0,
+  backgroundColor: theme.palette.secondary.light,
+  position: 'absolute',
+  zIndex: 10,
 }));
 
 export const SuggestionsList = styled('ul')(() => ({

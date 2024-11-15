@@ -3,11 +3,22 @@ import { AppBar, Paper, styled } from '@mui/material';
 
 export const HeaderBar = styled(AppBar)(({ theme }) => ({
   minHeight: '3vh',
-  //background: `linear-gradient(90deg, ${theme.palette.primary.main} 35%, rgba(0,0,0,0) 100%)`,
-  backgroundColor: theme.palette.primary.main,
+  background: `linear-gradient(90deg, ${theme.palette.primary.main} 35%, rgba(0,0,0,0) 100%)`,
+  //backgroundColor: theme.palette.primary.main,
   //background: `url(${forest}), linear-gradient(90deg, ${theme.palette.primary.main} 35%, rgba(0,0,0,0) 100%)`,
   padding: '0 2rem',
   display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+}));
+
+export const Title = styled('div')(({ theme }) => ({
+  flexDirection: 'column',
+  color: theme.palette.secondary.light,
+
+  p: {
+    margin: '0.2rem',
+  },
 }));
 
 export const H1 = styled('h1')(({ theme }) => ({
