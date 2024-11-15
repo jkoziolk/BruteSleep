@@ -1,3 +1,4 @@
-import { ILocalizationSlice } from '../types';
+import { IStoreSliceState } from '../types';
 
-export const localizationState = (state: ILocalizationSlice) => state;
+export const localizationState = (state: IStoreSliceState) =>
+  state.localization;

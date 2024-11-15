@@ -13,7 +13,6 @@ export const App = () => {
   const [weather, setWeather] = useState<IWeatherResult>();
 
   useEffect(() => {
-    console.log(localization);
     if (!localization || !localization.lat || !localization.lon) return;
 
     getWeather(localization.lat, localization.lon).then(
