@@ -48,6 +48,7 @@ export const LocalizationSearch = () => {
         onChange={onChange}
         value={value}
         size="small"
+        placeholder="wyszukaj miejsce"
       ></SearchField>
 
       {isFocus && localizations && localizations.length > 0 && (
