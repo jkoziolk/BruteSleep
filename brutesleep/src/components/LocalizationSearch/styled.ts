@@ -28,7 +28,7 @@ export const SuggestionsBox = styled(Paper)(({ theme }) => ({
   borderRadius: 0,
   backgroundColor: theme.palette.secondary.light,
   position: 'absolute',
-  zIndex: 10,
+  zIndex: 10000,
 }));
 
 export const SuggestionsList = styled('ul')(() => ({
